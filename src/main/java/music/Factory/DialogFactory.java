@@ -1,4 +1,7 @@
-package Music;
+package music.Factory;
+
+import music.Manager.DiscManager;
+import music.Music.MusicCompilation;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;

@@ -1,4 +1,13 @@
-package Music;
+package music;
+
+import music.Dialog.CompilationDetailsDialog;
+import music.Panel.CompilationListPanel;
+import music.Panel.CompilationSearchPanel;
+import music.Factory.DialogFactory;
+import music.Factory.StatusBarFactory;
+import music.Factory.ToolBarFactory;
+import music.Manager.DiscManager;
+import music.Music.MusicCompilation;
 
 import javax.swing.*;
 import java.awt.*;
@@ -76,7 +85,7 @@ public class MusicAppGUI extends JFrame {
         DialogFactory.showAddCompilationDialog(this, discManager, listModel, statusBar);
     }
 
-    void renameCompilation() {
+    public void renameCompilation() {
         MusicCompilation selected = compilationList.getSelectedValue();
         if (selected == null) {
             showError("Помилка", "Спочатку виберіть збірку для перейменування");
@@ -85,7 +94,7 @@ public class MusicAppGUI extends JFrame {
         DialogFactory.showRenameCompilationDialog(this, discManager, listModel, statusBar, selected);
     }
 
-    void deleteCompilation() {
+    public void deleteCompilation() {
         MusicCompilation selected = compilationList.getSelectedValue();
         if (selected == null) {
             showError("Помилка", "Спочатку виберіть збірку для видалення");

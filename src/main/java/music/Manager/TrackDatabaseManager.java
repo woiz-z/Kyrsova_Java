@@ -1,4 +1,11 @@
-package Music;
+package music.Manager;
+
+import music.*;
+import music.Dialog.CompilationDetailsDialog;
+import music.Panel.HeaderPanel;
+import music.Music.MusicCompilation;
+import music.Music.MusicTrack;
+import music.Panel.TrackListPanel;
 
 import javax.swing.*;
 import java.sql.*;
@@ -159,8 +166,8 @@ public class TrackDatabaseManager {
         }
     }
 
-    static void updateTracksInDatabase(CompilationDetailsDialog parent, MusicCompilation compilation,
-                                       TrackListPanel trackListPanel) {
+    public static void updateTracksInDatabase(CompilationDetailsDialog parent, MusicCompilation compilation,
+                                              TrackListPanel trackListPanel) {
         try (Connection connection = DatabaseConfig.getConnection()) {
             connection.setAutoCommit(false);
             try {

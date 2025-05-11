@@ -1,4 +1,11 @@
-package Music;
+package music.Panel;
+
+import music.Dialog.CompilationDetailsDialog;
+import music.Renderer.ModernTrackListRenderer;
+import music.Music.MusicCompilation;
+import music.Music.MusicTrack;
+import music.Dialog.TrackDetailsDialog;
+import music.Music.TrackListDragAndDropHandler;
 
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
@@ -16,7 +23,7 @@ public class TrackListPanel {
     private List<MusicTrack> allTracks;
     private final TrackSearchPanel searchPanel;
     private final CompilationDetailsDialog parent;
-    final MusicCompilation compilation;
+    public final MusicCompilation compilation;
 
     public TrackListPanel(CompilationDetailsDialog parent, MusicCompilation compilation) {
         this.parent = parent;

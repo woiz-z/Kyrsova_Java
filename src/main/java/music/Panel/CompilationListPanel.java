@@ -1,4 +1,8 @@
-package Music;
+package music.Panel;
+
+import music.Renderer.CompilationListRenderer;
+import music.Factory.ContextMenuFactory;
+import music.Music.MusicCompilation;
 
 import javax.swing.*;
 import javax.swing.border.TitledBorder;

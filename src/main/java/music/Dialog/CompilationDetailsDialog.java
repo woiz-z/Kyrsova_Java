@@ -1,11 +1,17 @@
-package Music;
+package music.Dialog;
+
+import music.Panel.ButtonPanel;
+import music.Manager.DiscManager;
+import music.Panel.HeaderPanel;
+import music.Music.MusicCompilation;
+import music.Panel.TrackListPanel;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 
 public class CompilationDetailsDialog extends JDialog {
-    final MusicCompilation compilation;
+    public final MusicCompilation compilation;
     private final DiscManager discManager;
 
     public CompilationDetailsDialog(JFrame parent, MusicCompilation compilation) {

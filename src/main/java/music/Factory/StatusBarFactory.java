@@ -1,4 +1,4 @@
-package Music;
+package music.Factory;
 
 import javax.swing.*;
 import java.awt.*;

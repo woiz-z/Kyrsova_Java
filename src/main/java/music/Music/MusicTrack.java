@@ -1,4 +1,5 @@
-package Music;
+package music.Music;
+
 import java.io.Serializable;
 import java.time.Duration;
 

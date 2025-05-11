@@ -1,4 +1,9 @@
-package Music;
+package music.Manager;
+
+import music.DatabaseConfig;
+import music.Music.MusicCompilation;
+import music.Music.MusicGenre;
+import music.Music.MusicTrack;
 
 import java.io.*;
 import java.sql.*;

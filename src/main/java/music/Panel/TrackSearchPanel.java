@@ -1,4 +1,6 @@
-package Music;
+package music.Panel;
+
+import music.Music.MusicTrack;
 
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
@@ -7,22 +9,22 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CompilationSearchPanel extends JPanel {
+public class TrackSearchPanel extends JPanel {
     private final JTextField searchField;
-    private final DefaultListModel<MusicCompilation> originalModel;
-    private final DefaultListModel<MusicCompilation> filteredModel;
-    private final JList<MusicCompilation> compilationList;
-    private List<MusicCompilation> allCompilations;
+    private final DefaultListModel<MusicTrack> originalModel;
+    private final DefaultListModel<MusicTrack> filteredModel;
+    private final JList<MusicTrack> trackList;
+    private List<MusicTrack> allTracks;
 
-    public CompilationSearchPanel(JList<MusicCompilation> compilationList, DefaultListModel<MusicCompilation> listModel) {
-        this.compilationList = compilationList;
+    public TrackSearchPanel(JList<MusicTrack> trackList, DefaultListModel<MusicTrack> listModel) {
+        this.trackList = trackList;
         this.originalModel = listModel;
         this.filteredModel = new DefaultListModel<>();
-        this.allCompilations = new ArrayList<>();
+        this.allTracks = new ArrayList<>();
 
-        // Зберігаємо всі збірки перед пошуком
+        // Зберігаємо всі треки перед пошуком
         for (int i = 0; i < originalModel.getSize(); i++) {
-            allCompilations.add(originalModel.get(i));
+            allTracks.add(originalModel.get(i));
         }
 
         setLayout(new BorderLayout());
@@ -48,7 +50,7 @@ public class CompilationSearchPanel extends JPanel {
                     g2.setFont(getFont().deriveFont(Font.ITALIC));
                     FontMetrics fm = g2.getFontMetrics();
                     int y = (getHeight() - fm.getHeight()) / 2 + fm.getAscent();
-                    g2.drawString("Пошук збірок...", 23, y);
+                    g2.drawString("Пошук треків...", 23, y);
                 }
             }
 
@@ -76,7 +78,7 @@ public class CompilationSearchPanel extends JPanel {
         searchPanel.setOpaque(false);
         searchPanel.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 0));
 
-        // Іконка пошуку
+        // Іконка пошуку (можна замінити на реальну іконку)
         JLabel searchIcon = new JLabel("🔍") {
             @Override
             protected void paintComponent(Graphics g) {
@@ -141,46 +143,47 @@ public class CompilationSearchPanel extends JPanel {
         searchField.getDocument().addDocumentListener(new DocumentListener() {
             @Override
             public void insertUpdate(DocumentEvent e) {
-                filterCompilations();
+                filterTracks();
             }
 
             @Override
             public void removeUpdate(DocumentEvent e) {
-                filterCompilations();
+                filterTracks();
             }
 
             @Override
             public void changedUpdate(DocumentEvent e) {
-                filterCompilations();
+                filterTracks();
             }
         });
     }
 
-    private void filterCompilations() {
+    private void filterTracks() {
         String searchText = searchField.getText().toLowerCase();
         filteredModel.clear();
 
         if (searchText.isEmpty()) {
-            // Якщо поле пошуку порожнє, показуємо всі збірки
-            compilationList.setModel(originalModel);
+            // Якщо поле пошуку порожнє, показуємо всі треки
+            trackList.setModel(originalModel);
         } else {
-            // Фільтруємо збірки за введеним текстом
-            for (MusicCompilation compilation : allCompilations) {
-                if (matchesSearch(compilation, searchText)) {
-                    filteredModel.addElement(compilation);
+            // Фільтруємо треки за введеним текстом
+            for (MusicTrack track : allTracks) {
+                if (matchesSearch(track, searchText)) {
+                    filteredModel.addElement(track);
                 }
             }
-            compilationList.setModel(filteredModel);
+            trackList.setModel(filteredModel);
         }
     }
 
-    private boolean matchesSearch(MusicCompilation compilation, String searchText) {
-        return compilation.getTitle().toLowerCase().contains(searchText) ||
-                String.valueOf(compilation.getTracks().size()).contains(searchText);
+    private boolean matchesSearch(MusicTrack track, String searchText) {
+        return track.getTitle().toLowerCase().contains(searchText) ||
+                track.getArtist().toLowerCase().contains(searchText) ||
+                track.getGenre().toString().toLowerCase().contains(searchText);
     }
 
-    public void updateCompilationList(List<MusicCompilation> compilations) {
-        allCompilations = new ArrayList<>(compilations);
-        filterCompilations(); // Повторно застосовуємо поточний фільтр після оновлення списку
+    public void updateTrackList(List<MusicTrack> tracks) {
+        allTracks = new ArrayList<>(tracks);
+        filterTracks(); // Повторно застосовуємо поточний фільтр після оновлення списку
     }
 }

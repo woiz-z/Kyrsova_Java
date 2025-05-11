@@ -1,4 +1,8 @@
-package Music;
+package music.Music;
+
+import music.Dialog.CompilationDetailsDialog;
+import music.Manager.TrackDatabaseManager;
+import music.Panel.TrackListPanel;
 
 import javax.swing.*;
 import java.awt.*;

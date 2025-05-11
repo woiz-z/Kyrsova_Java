@@ -1,8 +1,13 @@
-package Music;
+package music.Panel;
+
+import music.Dialog.CompilationDetailsDialog;
+import music.Dialog.StatisticsDialog;
+import music.Manager.TrackDatabaseManager;
+import music.Dialog.TrackDialogs;
+import music.Music.MusicCompilation;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
 
 public class ButtonPanel {
     private final JPanel panel;

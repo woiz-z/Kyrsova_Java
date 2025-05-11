@@ -71,7 +71,7 @@
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <mainClass>Music.MusicAppGUI</mainClass>
+                            <mainClass>music.MusicAppGUI</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

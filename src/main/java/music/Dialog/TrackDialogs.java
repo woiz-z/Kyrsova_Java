@@ -1,4 +1,11 @@
-package Music;
+package music.Dialog;
+
+import music.Manager.TrackDatabaseManager;
+import music.Panel.HeaderPanel;
+import music.Music.MusicCompilation;
+import music.Music.MusicGenre;
+import music.Music.MusicTrack;
+import music.Panel.TrackListPanel;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;

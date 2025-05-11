@@ -1,4 +1,6 @@
-package Music;
+package music.Dialog;
+
+import music.Music.MusicTrack;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;

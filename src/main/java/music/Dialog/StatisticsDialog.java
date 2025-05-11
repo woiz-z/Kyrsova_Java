@@ -1,9 +1,12 @@
-package Music;
+package music.Dialog;
+
+import music.Music.MusicCompilation;
+import music.Music.MusicGenre;
+import music.Music.MusicTrack;
 
 import javax.swing.*;
 import javax.swing.border.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
 import java.time.Duration;
 import java.util.*;
 import java.util.List;

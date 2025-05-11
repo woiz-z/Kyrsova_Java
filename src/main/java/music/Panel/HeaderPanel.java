@@ -1,7 +1,8 @@
-package Music;
+package music.Panel;
+
+import music.Music.MusicCompilation;
 
 import javax.swing.*;
-import javax.swing.border.Border;
 import java.awt.*;
 
 public class HeaderPanel {

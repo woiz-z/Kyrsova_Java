@@ -1,4 +1,7 @@
-package Music;
+package music.Factory;
+
+import music.Music.MusicCompilation;
+import music.MusicAppGUI;
 
 import javax.swing.*;
 import java.awt.*;
