@@ -159,8 +159,8 @@ public class TrackDatabaseManager {
         }
     }
 
-    private static void updateTracksInDatabase(CompilationDetailsDialog parent, MusicCompilation compilation,
-                                               TrackListPanel trackListPanel) {
+    static void updateTracksInDatabase(CompilationDetailsDialog parent, MusicCompilation compilation,
+                                       TrackListPanel trackListPanel) {
         try (Connection connection = DatabaseConfig.getConnection()) {
             connection.setAutoCommit(false);
             try {

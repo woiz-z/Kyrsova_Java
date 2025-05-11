@@ -42,7 +42,7 @@ public class TrackListPanel {
         trackList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         trackList.setBackground(new Color(255, 255, 255, 200));
 
-        new TrackListDragAndDropHandler(trackList, trackListModel);
+        new TrackListDragAndDropHandler(trackList, trackListModel,this, parent);
 
         trackList.addMouseListener(new MouseAdapter() {
             public void mouseClicked(MouseEvent evt) {

@@ -16,7 +16,7 @@ public class CompilationDetailsDialog extends JDialog {
     }
 
     private void initializeUI() {
-        setSize(1300, 650);
+        setSize(1400, 750);
         setLocationRelativeTo(getParent());
         setResizable(true);
 
